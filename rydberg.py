@@ -69,6 +69,7 @@ plt.tight_layout()
 plt.savefig("screening_coefficient_fixed_R", dpi=400)
 plt.show()
 
+print()
 print("Case: actual Rydberg constant")
 rydberg = 10973731
 rydberg_unc = 0
