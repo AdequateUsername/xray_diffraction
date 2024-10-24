@@ -2,7 +2,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
-data = np.loadtxt(/sample_data/"Ag.csv"/, delimiter=',', skiprows=2, usecols=(1, 2, 3))
+data = np.loadtxt("sample_data/Ag.csv", delimiter=',', skiprows=2, usecols=(1, 2, 3))
 events = data[::, 0]
 channels = data[::, 1]
 energy = data[::, 2]
@@ -24,7 +24,5 @@ if plot_gaussian:
 plt.title("Molybdenum Straight-through Spectrum (channels)")
 plt.xlabel("Energy (channels)")
 plt.ylabel("Frequency")
-plt.savefig("processed/calibration_straight_through_channels", dpi=400)
+plt.savefig("processed/Ag", dpi=400)
 plt.show()
-
-
