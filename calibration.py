@@ -26,7 +26,7 @@ plt.title("Calibration of Straight Through Spectrum")
 plt.xlabel("Channels")
 plt.ylabel("Frequency")
 plt.xlim(330, 400)
-# plt.savefig("processed/Cu_energy", dpi=400)
+plt.savefig("processed/str8_through", dpi=400)
 plt.show()
 
 print("mean")
