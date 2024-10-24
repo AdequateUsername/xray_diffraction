@@ -18,7 +18,7 @@ if plot_gaussian:
     gaussian_y_fit = gaussian_func(x_fit, *gaussian_fit[0]) * 2000
 
 plt.grid()
-plt.plot(channels, events)
+plt.plot(energy, events)
 if plot_gaussian:
     plt.plot(x_fit, gaussian_y_fit)
 plt.title("Molybdenum Straight-through Spectrum (channels)")
