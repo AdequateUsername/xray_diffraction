@@ -35,3 +35,13 @@ print("mean")
 print(gaussian_fit[0][0])
 print("sigma")
 print(gaussian_fit[0][1])
+
+energy = gaussian_fit[0][0]
+energy_unc = gaussian_fit[0][1] + 0.4
+R = 13.6e-3     # keV
+screen_coeff = 2.82598
+screen_coeff_unc = 0.122
+z = np.sqrt(energy / R) + screen_coeff
+z_unc = np.sqrt((0.5 * (energy_unc / energy) * (np.sqrt(energy / R)))**2 + screen_coeff_unc**2)
+print(z)
+print(z_unc)
