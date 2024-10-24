@@ -8,7 +8,7 @@ channels = data[::, 1]
 energy = data[::, 2]
 
 plot_gaussian = False
-plot_double_gaussian = False
+plot_double_gaussian = True
 
 
 def gaussian_func(x, x0, sigma, A):
@@ -25,8 +25,8 @@ if plot_gaussian:
     gaussian_y_fit = gaussian_func(x_fit, *gaussian_fit[0])
 
 elif plot_double_gaussian:
-    initial_guess = [7.8, 0.5, 1.1, 8.5, 0.5, 0.9]
-    x_fit = np.linspace(9, 10, 10000)
+    initial_guess = [13, 0.5, 1.1, 14.8, 0.5, 0.9]
+    x_fit = np.linspace(10, 18, 10000)
     gaussian_fit = curve_fit(double_gaussian_func, energy, events, p0=initial_guess)
     gaussian_y_fit = double_gaussian_func(x_fit, *gaussian_fit[0])
 
@@ -34,10 +34,10 @@ plt.grid()
 plt.plot(energy, events)
 if plot_gaussian or plot_double_gaussian:
     plt.plot(x_fit, gaussian_y_fit)
-plt.title("Unknown Material Energy Spectrum")
+plt.title("Unknown Element Energy Spectrum")
 plt.xlabel("Energy (keV)")
 plt.ylabel("Frequency")
-plt.xlim(11, 20)
+plt.xlim(10, 24)
 
 if plot_gaussian:
     print("mean")
@@ -81,7 +81,7 @@ elif plot_double_gaussian:
     print(z1_unc)
     print(z2)
     print(z2_unc)
-    plt.legend(["Raw Data", f"Fitted Bimodal Gaussian \n Mean energy: {energy1:.1f} ± {energy1_unc:.1f} keV, {energy2:.1f} ± {energy2_unc:.1f} keV \n Atomic number: {z1:.1f} ± {z1_unc:.1f}, {z2:.1f} ± {z2_unc:.1f}"])
+    plt.legend(["Raw Data", f"Fitted Bimodal Gaussian \n Mean energy: {energy1:.1f} ± {energy1_unc:.1f} keV,\n {energy2:.1f} ± {energy2_unc:.1f} keV \n Atomic number: {z1:.1f} ± {z1_unc:.1f},\n {z2:.1f} ± {z2_unc:.1f}"])
 
-# plt.savefig("processed/unknowns/nr6", dpi=400)
+plt.savefig("processed/unknowns/nr6_Gaussian", dpi=400)
 plt.show()
