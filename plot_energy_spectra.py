@@ -28,8 +28,6 @@ plt.title("Copper Energy Spectrum")
 plt.xlabel("Energy (keV)")
 plt.ylabel("Frequency")
 plt.xlim(2.5, 15)
-# plt.savefig("processed/Cu_energy", dpi=400)
-plt.show()
 
 print("mean")
 print(gaussian_fit[0][0])
@@ -45,3 +43,7 @@ z = np.sqrt(energy / R) + screen_coeff
 z_unc = np.sqrt((0.5 * (energy_unc / energy) * (np.sqrt(energy / R)))**2 + screen_coeff_unc**2)
 print(z)
 print(z_unc)
+
+plt.legend(["Raw Data", f"Fitted Gaussian \n Mean energy: {energy:.1f} ± {energy_unc:.1f} keV \n Atomic number: {z:.1f} ± {z_unc:.1f}"])
+plt.savefig("processed/Cu_energy_Gaussian", dpi=400)
+plt.show()
