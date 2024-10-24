@@ -33,9 +33,9 @@ brass_data.dropna(subset=['Events N'], inplace=True)
 plt.figure(figsize=(10, 6))
 
 # Plot frequency line graphs
-plt.plot(copper_data['Events N'], label='Copper', color='orange')
-plt.plot(zinc_data['Events N'], label='Zinc', color='blue')
-plt.plot(brass_data['Events N'], label='Brass', color='green')
+plt.plot(copper_data['Events N'], label='Copper', color='blue')
+plt.plot(zinc_data['Events N'], label='Zinc', color='red')
+plt.plot(brass_data['Events N'], label='Brass', color='black')
 
 # Add labels and title
 plt.xlabel('Events N')
